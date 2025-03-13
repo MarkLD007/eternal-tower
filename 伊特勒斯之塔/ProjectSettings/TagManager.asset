@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -11,6 +12,7 @@ TagManager:
   - 
   - Water
   - UI
+  - map
   - 
   - 
   - 
@@ -20,9 +22,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - player
+  - weapon
   - 
   - 
   - 
