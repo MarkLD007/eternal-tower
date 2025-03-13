@@ -33,9 +33,7 @@ public class Attack : MonoBehaviour
             Vector3 tp = collision.gameObject.transform.position;
             Vector3 cp = new Vector3(gp.x - tp.x, gp.y - tp.y, 0);
             Vector3 way = Vector3.Normalize(cp);
-            //GameObject arr = Instantiate(arry);
-            //float speed = arr.GetComponent<ArryManager>().speed;
-           //arr.transform.position = new Vector3(gp.x - way.x *speed, gp.y - way.y * speed, 0);
+          
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

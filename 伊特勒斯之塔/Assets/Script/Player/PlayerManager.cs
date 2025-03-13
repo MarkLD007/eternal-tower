@@ -9,10 +9,10 @@ using UnityEngine.UIElements;
 public class PlayerManager : MonoBehaviour
 {
     States state=States.idle;
-    public float AbstactHP = 100;//决定上线
-    public float SubstanceHP = 100;//决定下线
+    public float AbstactHP = 100;//决定上限
+    public float SubstanceHP = 100;//决定下限
     private float dynamicHP;
-    private float speed = 0.01f;
+    public float speed = 0.01f;
     private float hurtTime = -1;
     public GameObject weaponPond;
     public GameObject animationPond;
@@ -29,9 +29,14 @@ public class PlayerManager : MonoBehaviour
         int randomChild = UnityEngine.Random.Range(0, childLength);
         weaponPond.transform.GetChild(randomChild).SetParent(gameObject.transform);
     }
-   
+   void limitHP()
+    {
+        if (SubstanceHP > AbstactHP)
+            SubstanceHP = AbstactHP;
+    }
     void Update()
     {
+        limitHP();
         move();
         hurt();
     }
