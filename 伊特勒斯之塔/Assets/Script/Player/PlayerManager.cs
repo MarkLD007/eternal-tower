@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     public float AbstactHP = 100;//决定上线
     public float SubstanceHP = 100;//决定下线
     private float dynamicHP;
-    private float speed = 0.005f;
+    private float speed = 0.01f;
     private float hurtTime = -1;
     public GameObject weaponPond;
     public GameObject animationPond;
@@ -21,12 +21,13 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         dynamicHP = SubstanceHP;
+        equip();
     }
    public void equip()
     {
         int childLength = weaponPond.transform.childCount;
         int randomChild = UnityEngine.Random.Range(0, childLength);
-        weaponPond.transform.GetChild(randomChild);
+        weaponPond.transform.GetChild(randomChild).SetParent(gameObject.transform);
     }
    
     void Update()
@@ -42,12 +43,14 @@ public class PlayerManager : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 switchAnimation(animationPond.transform.GetChild(1).GameObject());
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
                 position = gameObject.transform.position;
                 gameObject.transform.position = new Vector3(position.x - speed, position.y, 0);
             }
             if (Input.GetKey(KeyCode.D))
             {
                 switchAnimation(animationPond.transform.GetChild(1).GameObject());
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 position = gameObject.transform.position;
                 gameObject.transform.position = new Vector3(position.x + speed, position.y, 0);
             }
