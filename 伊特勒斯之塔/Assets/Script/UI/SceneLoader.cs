@@ -9,14 +9,16 @@ public class SceneLoader : MonoBehaviour
 {
     public Button btA;
     public Button btB;
+
     public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject.DontDestroyOnLoad(gameObject);
         btA.onClick.AddListener(LoadSceneA);
         btB.onClick.AddListener(loadSceenB);
     }
+
 
     private void LoadSceneA()
     {
