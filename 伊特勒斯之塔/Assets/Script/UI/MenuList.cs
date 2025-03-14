@@ -17,7 +17,7 @@ public class MenuList : MonoBehaviour
     {
         if (menuKeys)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && TeamKeys)
             {
                 menulist.SetActive(true);
                 menuKeys = false;
@@ -29,6 +29,16 @@ public class MenuList : MonoBehaviour
             menulist.SetActive(false);
             menuKeys = true;
             Time.timeScale = 1f; // 时间恢复
+        }
+
+        if (!TeamKeys)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                TeamList.SetActive(false);
+                TeamKeys = true;
+                Time.timeScale = 1f; // 时间恢复
+            }
         }
     }
 
@@ -58,7 +68,7 @@ public class MenuList : MonoBehaviour
         {
             TeamList.SetActive(true);
             TeamKeys = false;
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; //  时间静止
         }
     }
 
