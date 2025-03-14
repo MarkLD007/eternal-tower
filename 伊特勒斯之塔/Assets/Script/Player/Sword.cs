@@ -3,23 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Sword : MonoBehaviour
 {
     public float shangHai;
     public float aspeed;
-    public float inHp;//影响上限血量
-    public float outHp;//影响下限血量
+    public float abstractHp;//影响上限血量
+    public float substanceHp;//影响下限血量
     public float inSpeed;//影响速度
-    public float AttackDistace = 5f;
-    private Boolean auto = true;
    
     void Start()
     {
        
     }
-    void kunbang()
+    
+    void Attack()
     {
+        if (Input.GetMouseButton(0))
+            gameObject.GetComponent<Rigidbody2D>().AddTorque(aspeed);
+        if (Input.GetMouseButton(1))
+            gameObject.GetComponent<Rigidbody2D>().AddTorque(-aspeed);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,30 +33,32 @@ public class Sword : MonoBehaviour
             GameObject enemy = collision.gameObject;
             enemy.GetComponent<EnemyManager>().hp -= shangHai;
             GameObject player = gameObject.transform.parent.GameObject();
-            player.GetComponent<PlayerManager>().SubstanceHP += outHp; 
+            player.GetComponent<PlayerManager>().SubstanceHP += substanceHp; 
         }
     }
-    void InfluencePLayer(float inhp,float inspeed)
+    void InfluencePLayer(float abstracthp, float inspeed)
     {
         GameObject player = gameObject.transform.parent.GameObject();
         if (player.name == "Player")
         {
-            player.GetComponent<PlayerManager>().AbstactHP += inHp;
-            player.GetComponent<PlayerManager>().speed+=inSpeed;
+            gameObject.GetComponent<DistanceJoint2D>().connectedBody = player.GetComponent<Rigidbody2D>();
+            player.GetComponent<PlayerManager>().AbstactHP += abstracthp;
+            player.GetComponent<PlayerManager>().speed+=inspeed;
         }
 
     }
     private void OnEnable()
     {
-        InfluencePLayer(inHp,inSpeed);
+        InfluencePLayer(abstractHp,inSpeed);
     }
     private void OnDisable()
     {
-        InfluencePLayer(-inHp,-inSpeed);
+        InfluencePLayer(-abstractHp,-inSpeed);
     }
    
     void Update()
     {
-        
+        Attack();
     }
+  
 }

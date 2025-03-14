@@ -11,34 +11,56 @@ public class PlayerManager : MonoBehaviour
     States state=States.idle;
     public float AbstactHP = 100;//决定上限
     public float SubstanceHP = 100;//决定下限
-    private float dynamicHP;
+    private float DynamicHP;
     public float speed = 0.01f;
     private float hurtTime = -1;
     public GameObject weaponPond;
     public GameObject animationPond;
+    private int swordXuho = 0;
     private Vector3 position;
 
     void Start()
     {
-        dynamicHP = SubstanceHP;
+        DynamicHP = SubstanceHP;
         equip();
     }
    public void equip()
     {
         int childLength = weaponPond.transform.childCount;
         int randomChild = UnityEngine.Random.Range(0, childLength);
-        weaponPond.transform.GetChild(randomChild).SetParent(gameObject.transform);
+        GameObject weapon= GameObject.Instantiate(weaponPond);
+        weapon.transform.GetChild(randomChild).SetParent(gameObject.transform);
+        Destroy(weapon);
     }
    void limitHP()
     {
         if (SubstanceHP > AbstactHP)
+        {
             SubstanceHP = AbstactHP;
+            DynamicHP = SubstanceHP;
+        }
+          
     }
     void Update()
     {
         limitHP();
+        switchSword();
         move();
         hurt();
+        died();
+    }
+    void switchSword()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            int swordNum = gameObject.transform.childCount;
+            if (swordXuho >= swordNum)
+                swordXuho = 0;
+            for (int i = 0; i < swordNum; i++)
+                gameObject.transform.GetChild(i).GameObject().SetActive(false);
+            gameObject.transform.GetChild(swordXuho).GameObject().SetActive(true);
+            swordXuho++;
+        }
     }
     void move()
     {
@@ -78,9 +100,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (hurtTime >= 0)
             hurtTime += Time.deltaTime;
-        if (SubstanceHP < dynamicHP)
+        if (SubstanceHP < DynamicHP)
         {
-            dynamicHP = SubstanceHP;
+            DynamicHP = SubstanceHP;
             state = States.hurt;
             hurtTime = 0;
             switchAnimation(animationPond.transform.GetChild(2).GameObject());
