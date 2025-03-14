@@ -466,7 +466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8439477165583243606, guid: b15de460362db3a4d84242768c089b61, type: 3}
+  m_Sprite: {fileID: -734978760261534972, guid: 8090fc9fae2b433428987aee4827c039, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -878,8 +878,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menulist: {fileID: 1743498346}
+  TeamList: {fileID: 0}
   animator: {fileID: 1048734802}
   menuKeys: 1
+  TeamKeys: 1
 --- !u!1 &659551428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1379,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9000\u51FA\u8BD5\u70BC"
+  m_Text: "\u9000\u51FA\u6559\u7A0B"
 --- !u!222 &1129496324
 CanvasRenderer:
   m_ObjectHideFlags: 0
