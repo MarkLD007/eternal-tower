@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuList : MonoBehaviour
 {
+    
     public GameObject menulist;
+    public GameObject TeamList;
     public Animator animator;
 
     [SerializeField] private bool menuKeys = true;
-
+    [SerializeField] private bool TeamKeys = true;
 
     void Update()
     {
@@ -39,12 +41,51 @@ public class MenuList : MonoBehaviour
 
     public void ExitToStart()
     {
+        menulist.SetActive(false);
+        menuKeys = true;
+        Time.timeScale = 1f; // 时间恢复
         StartCoroutine(LoadScene(0));
     }
 
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void Maker()
+    {
+        if (TeamKeys)
+        {
+            TeamList.SetActive(true);
+            TeamKeys = false;
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void TSettings()
+    {
+        if (!TeamKeys)
+        {
+            TeamList.SetActive(false);
+            TeamKeys = true;
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void Settings()
+    {
+        if (menuKeys)
+        {
+            menulist.SetActive(true);
+            menuKeys = false;
+            Time.timeScale = 0f; // 时间暂停
+        }
+        else
+        {
+            menulist.SetActive(false);
+            menuKeys = true;
+            Time.timeScale = 1f; // 时间恢复
+        }
     }
 
     IEnumerator LoadScene(int index)
