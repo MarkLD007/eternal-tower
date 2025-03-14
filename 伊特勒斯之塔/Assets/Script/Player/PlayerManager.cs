@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -35,10 +36,9 @@ public class PlayerManager : MonoBehaviour
    void limitHP()
     {
         if (SubstanceHP > AbstactHP)
-        {
             SubstanceHP = AbstactHP;
+        if (SubstanceHP > DynamicHP)
             DynamicHP = SubstanceHP;
-        }
           
     }
     void Update()
@@ -104,14 +104,15 @@ public class PlayerManager : MonoBehaviour
         {
             DynamicHP = SubstanceHP;
             state = States.hurt;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             hurtTime = 0;
             switchAnimation(animationPond.transform.GetChild(2).GameObject());
-            if (hurtTime>=0.63)//animation时间
-            {
-                state = States.idle;
-                hurtTime = -1;
-            }
-           
+                              }
+        if (hurtTime >= 0.63)//animation时间
+        {
+             state = States.idle;
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            hurtTime = -1;
         }
     }
     void died()
@@ -120,6 +121,7 @@ public class PlayerManager : MonoBehaviour
         {
             state = States.died;
             switchAnimation(animationPond.transform.GetChild(3).GameObject());
+            SceneManager.LoadScene(0);
         }
     }
     void switchAnimation(GameObject stateAnimation)

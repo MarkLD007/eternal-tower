@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 824216077433122828}
   m_Layer: 17
   m_Name: sword-5
-  m_TagString: Player
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 2911744497019143276}
   m_Layer: 17
   m_Name: sword-2
-  m_TagString: Player
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 2477446458069396640}
   m_Layer: 17
   m_Name: sword-1
-  m_TagString: Player
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 5893321211894285082}
   m_Layer: 17
   m_Name: sword-4
-  m_TagString: Player
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -820,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shangHai: 30
-  aspeed: 0.6
+  aspeed: 0.5
   abstractHp: 20
   substanceHp: 0
   inSpeed: -0.01
@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 5658889253414565611}
   m_Layer: 17
   m_Name: sword-3
-  m_TagString: Player
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
