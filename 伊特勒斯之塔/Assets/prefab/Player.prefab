@@ -144,7 +144,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.75}
@@ -185,8 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54dd4ca4977b32b478c1a37886bfba1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbstactHP: 100
-  SubstanceHP: 100
-  speed: 0.5
+  AbstactHP: 300
+  SubstanceHP: 300
+  speed: 0.3
+  HPbar: {fileID: 0}
   weaponPond: {fileID: 3112475927824454640, guid: b09fc2e56ddfab0499b589832732df88, type: 3}
   animationPond: {fileID: 9201067896565463877, guid: 774b3c07624caa74594365ee31c5c02e, type: 3}

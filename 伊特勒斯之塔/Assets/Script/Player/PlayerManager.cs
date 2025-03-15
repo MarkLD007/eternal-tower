@@ -48,9 +48,15 @@ public class PlayerManager : MonoBehaviour
             DynamicHP = SubstanceHP;
           
     }
+ void limitPosition()
+    {
+        if (math.abs(gameObject.transform.position.x) > 465 && math.abs(gameObject.transform.position.y) > 225)
+            gameObject.transform.position = new Vector3(UnityEngine.Random.Range(-465, 465), UnityEngine.Random.Range(-225, 225), 0);
+    }
     void Update()
     {
         limitHP();
+        limitPosition();
         switchSword();
         move();
         hurt();

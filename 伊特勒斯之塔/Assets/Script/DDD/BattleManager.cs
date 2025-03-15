@@ -18,7 +18,7 @@ public class BattleManager : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         generateTime = 0;
-        generateNum = UnityEngine.Random.Range(15, 20);
+        generateNum = UnityEngine.Random.Range(10, 15);
     }
 
     void zhunchang()
@@ -63,7 +63,7 @@ public class BattleManager : MonoBehaviour
             jingdu++;
             zhunchang();
             Player.transform.localPosition = new Vector3(0, 0, 0);
-            generateNum = UnityEngine.Random.Range(15, 20);
+            generateNum = UnityEngine.Random.Range(10, 15);
             generateTime = 0;
         }
             

@@ -25,6 +25,7 @@ public class EnemyManager : MonoBehaviour
     {
         prepareAnimation();
         target = GameObject.Find("Player");
+        healthBar = GameObject.Find("healthBar").GetComponent<HealthBar>();
     }
    void  prepareAnimation()
     {
@@ -33,6 +34,7 @@ public class EnemyManager : MonoBehaviour
         GameObject diedAnimation = animationPond.transform.GetChild(2).GameObject();
         xsTime = diedAnimation.transform.rotation.eulerAngles.z * diedAnimation.transform.childCount;
     }
+
    
     void Update()
     {
@@ -82,7 +84,7 @@ public class EnemyManager : MonoBehaviour
         }
         if (hurtTime >= jcTime)//animationÊ±¼ä
             state = States.move;
-        if (hurtTime >= 2)
+        if (hurtTime >= 1.1)
         {
             gameObject.GetComponent<AudioSource>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
