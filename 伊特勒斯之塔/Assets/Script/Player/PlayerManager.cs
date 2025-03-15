@@ -10,11 +10,12 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour
 {
     States state=States.idle;
-    public float AbstactHP = 100;//决定上限
-    public float SubstanceHP = 100;//决定下限
-    private float DynamicHP;
+    public int AbstactHP = 100;//决定上限
+    public int SubstanceHP = 100;//决定下限
+    private int DynamicHP;
     public float speed = 0.01f;
     private float hurtTime = -1;
+    private float diedTime = -1;
     public GameObject weaponPond;
     public GameObject animationPond;
     private int swordXuho = 0;
@@ -25,7 +26,7 @@ public class PlayerManager : MonoBehaviour
         DynamicHP = SubstanceHP;
         equip();
     }
-   public void equip()
+    public void equip()
     {
         int childLength = weaponPond.transform.childCount;
         int randomChild = UnityEngine.Random.Range(0, childLength);
@@ -100,7 +101,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (hurtTime >= 0)
             hurtTime += Time.deltaTime;
-        if (SubstanceHP < DynamicHP)
+        if (SubstanceHP < DynamicHP&&SubstanceHP>1)
         {
             DynamicHP = SubstanceHP;
             state = States.hurt;
@@ -119,13 +120,21 @@ public class PlayerManager : MonoBehaviour
     }
     void died()
     {
+        if (diedTime >= 0)
+            diedTime += Time.deltaTime;
         if (SubstanceHP <= 0)
         {
+            SubstanceHP = 1;
             state = States.died;
             switchAnimation(animationPond.transform.GetChild(3).GameObject());
+            diedTime = 0;
+                  }
+        if (diedTime >= 1)
+        {
+            Destroy(gameObject);
             SceneManager.LoadScene(0);
         }
-    }
+              }
     void switchAnimation(GameObject stateAnimation)
     {
         gameObject.GetComponent<NewAnimation>().animations = stateAnimation;

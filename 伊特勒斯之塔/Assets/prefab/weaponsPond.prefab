@@ -820,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shangHai: 30
-  aspeed: 0.5
+  aspeed: 0.8
   abstractHp: 20
   substanceHp: 0
   inSpeed: -0.01

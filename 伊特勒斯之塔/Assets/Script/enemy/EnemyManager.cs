@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,16 +12,25 @@ public class EnemyManager : MonoBehaviour
     public int shanghai = 100;
     public float speed = 0.003f;
     public GameObject animationPond;
-    private States state = States.move;
+    public States state = States.move;
+    public Boolean monster = true;
     private float hurtTime=-1;
     private float jcTime;
+    private float diedTime=-1;
+    private float xsTime;
 
     public 
     void Start()
     {
-       GameObject hurtAnimation =animationPond.transform.GetChild(1).GameObject();
-        jcTime = hurtAnimation.transform.rotation.eulerAngles.z* hurtAnimation.transform.childCount;
-               target = GameObject.Find("Player");
+        prepareAnimation();
+        target = GameObject.Find("Player");
+    }
+   void  prepareAnimation()
+    {
+        GameObject hurtAnimation = animationPond.transform.GetChild(1).GameObject();
+        jcTime = hurtAnimation.transform.rotation.eulerAngles.z * hurtAnimation.transform.childCount;
+        GameObject diedAnimation = animationPond.transform.GetChild(2).GameObject();
+        xsTime = diedAnimation.transform.rotation.eulerAngles.z * diedAnimation.transform.childCount;
     }
    
     void Update()
@@ -29,9 +39,10 @@ public class EnemyManager : MonoBehaviour
         hurt();
         died();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+   private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player"&&monster)
         {
             GameObject player = collision.gameObject;
             player.GetComponent<PlayerManager>().SubstanceHP -= shanghai;
@@ -58,7 +69,7 @@ public class EnemyManager : MonoBehaviour
       
         if (hurtTime >= 0)
             hurtTime += Time.deltaTime;
-        if (hp < HP)
+        if (hp < HP&&hp>1)
         {
             HP = hp;
             state = States.hurt;
@@ -76,12 +87,19 @@ public class EnemyManager : MonoBehaviour
     }
     void died()
     {
+        if (diedTime >= 0)
+            diedTime += Time.deltaTime;
         if (hp<=0)
         {
+            hp = 1;
             state = States.died;
             switchAnimation(animationPond.transform.GetChild(2).GameObject());
+            diedTime = 0;
+        }
+        if (diedTime >= xsTime)
             Destroy(gameObject);
-          }
+       
     }
+  
     
 }

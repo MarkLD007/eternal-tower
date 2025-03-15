@@ -28,12 +28,13 @@ public class Sword : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+     
+         if (collision.gameObject.tag == "Enemy")
         {
             GameObject enemy = collision.gameObject;
             enemy.GetComponent<EnemyManager>().hp -= shangHai;
             GameObject player = gameObject.transform.parent.GameObject();
-            player.GetComponent<PlayerManager>().SubstanceHP += substanceHp; 
+            player.GetComponent<PlayerManager>().SubstanceHP += substanceHp;
         }
     }
     void InfluencePLayer(int abstracthp, float inspeed)
