@@ -1455,19 +1455,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 852552854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1308596680}
-        m_TargetAssemblyTypeName: MenuList, Assembly-CSharp
-        m_MethodName: Return
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &852552854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1945,7 +1933,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5C0F\u8BD5\u8EAB\u624B"
+  m_Text: "\u6309\u952E\u6559\u7A0B"
 --- !u!222 &1157418469
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3330,9 +3318,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 490bfbc72255342408984f60044487de, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4edad0a7bad7b564ebadf91dfedf5333, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.872
   m_Pitch: 1
   Loop: 0
   Mute: 0
