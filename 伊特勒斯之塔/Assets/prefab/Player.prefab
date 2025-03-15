@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 25, y: 25, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -187,6 +187,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbstactHP: 100
   SubstanceHP: 100
-  speed: 0.02
+  speed: 0.5
   weaponPond: {fileID: 3112475927824454640, guid: b09fc2e56ddfab0499b589832732df88, type: 3}
   animationPond: {fileID: 9201067896565463877, guid: 774b3c07624caa74594365ee31c5c02e, type: 3}

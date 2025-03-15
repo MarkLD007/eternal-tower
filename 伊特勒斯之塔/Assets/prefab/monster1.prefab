@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,8 +103,10 @@ MonoBehaviour:
   HP: 60
   hp: 60
   shanghai: 25
-  speed: 0.003
+  speed: 0.03
   animationPond: {fileID: 4035582026434236614, guid: f1ff06558d2cace4d983f527ac5b86a3, type: 3}
+  state: 1
+  monster: 1
 --- !u!114 &5021919160386121767
 MonoBehaviour:
   m_ObjectHideFlags: 0

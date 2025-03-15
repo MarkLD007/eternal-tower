@@ -31,7 +31,12 @@ public class PlayerManager : MonoBehaviour
         int childLength = weaponPond.transform.childCount;
         int randomChild = UnityEngine.Random.Range(0, childLength);
         GameObject weapon= GameObject.Instantiate(weaponPond);
-        weapon.transform.GetChild(randomChild).SetParent(gameObject.transform);
+        GameObject sword = weapon.transform.GetChild(randomChild).GameObject();
+        sword.transform.SetParent(gameObject.transform);
+        sword.GetComponent<DistanceJoint2D>().enabled = true;
+        sword.GetComponent<DistanceJoint2D>().connectedBody = gameObject.GetComponent<Rigidbody2D>();
+        sword.transform.localPosition = new Vector3(0, 0, 0);
+       
         Destroy(weapon);
     }
    void limitHP()

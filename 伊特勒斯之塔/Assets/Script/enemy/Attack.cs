@@ -24,21 +24,23 @@ public class Attack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (onattack)
+        if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.tag == "Player")
+            if (onattack)
             {
+
                 GameObject player = collision.gameObject;
                 player.GetComponent<PlayerManager>().SubstanceHP -= shanghai;
             }
-        }
-        if (attackTime < 0)
-        {
-            gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            GameObject boss = gameObject.transform.parent.GameObject();
-            boss.GetComponent<EnemyManager>().state = States.attack;
-            boss.GetComponent<NewAnimation>().animations = attackAnimation;
-            attackTime = 0;
+
+            if (attackTime < 0)
+            {
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                GameObject boss = gameObject.transform.parent.GameObject();
+                boss.GetComponent<EnemyManager>().state = States.attack;
+                boss.GetComponent<NewAnimation>().animations = attackAnimation;
+                attackTime = 0;
+            }
         }
       
     }

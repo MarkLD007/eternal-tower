@@ -14,7 +14,7 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.DontDestroyOnLoad(gameObject);
+       // GameObject.DontDestroyOnLoad(gameObject);
         btA.onClick.AddListener(LoadSceneA);
         btB.onClick.AddListener(loadSceenB);
     }

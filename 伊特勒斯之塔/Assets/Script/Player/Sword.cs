@@ -12,6 +12,7 @@ public class Sword : MonoBehaviour
     public int abstractHp;//影响上限血量
     public int substanceHp;//影响下限血量
     public float inSpeed;//影响速度
+    public float tili=100;
    
     void Start()
     {
@@ -20,10 +21,26 @@ public class Sword : MonoBehaviour
     
     void Attack()
     {
+
         if (Input.GetMouseButton(0))
-            gameObject.GetComponent<Rigidbody2D>().AddTorque(aspeed);
+        {
+            tili -= 0.03f;
+            if (tili > 0)
+                gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(aspeed, aspeed));
+        }
+        else if (tili<=100)
+            tili += 0.01f;
         if (Input.GetMouseButton(1))
-            gameObject.GetComponent<Rigidbody2D>().AddTorque(-aspeed);
+        {
+            tili -= 0.03f;
+            if (tili > 0)
+                gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(-aspeed, -aspeed));
+        }
+        else if(tili<=100)
+            tili += 0.01f;
+       
+      
+           
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,7 +59,6 @@ public class Sword : MonoBehaviour
         GameObject player = gameObject.transform.parent.GameObject();
         if (player.name == "Player")
         {
-            gameObject.GetComponent<DistanceJoint2D>().connectedBody = player.GetComponent<Rigidbody2D>();
             player.GetComponent<PlayerManager>().AbstactHP += abstracthp;
             player.GetComponent<PlayerManager>().speed+=inspeed;
         }
