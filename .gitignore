@@ -71,3 +71,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+伊特勒斯之塔/Assets/2Dassets/Sprite/player/died-input.aseprite.meta
+伊特勒斯之塔/Assets/2Dassets/Sprite/player/move.aseprite.meta
+伊特勒斯之塔/Assets/2Dassets/Sprite/player/move.aseprite.meta
+伊特勒斯之塔/Assets/2Dassets/Sprite/player/hurt-input.aseprite.meta

@@ -6,18 +6,21 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     GameObject target;
-    public float HP = 100;
-    public float hp = 100;
-    public float shanghai = 100;
+    public int HP = 100;
+    public int hp = 100;
+    public int shanghai = 100;
     public float speed = 0.003f;
     public GameObject animationPond;
     private States state = States.move;
     private float hurtTime=-1;
+    private float jcTime;
 
     public 
     void Start()
     {
-        target = GameObject.Find("Player");
+       GameObject hurtAnimation =animationPond.transform.GetChild(1).GameObject();
+        jcTime = hurtAnimation.transform.rotation.eulerAngles.z* hurtAnimation.transform.childCount;
+               target = GameObject.Find("Player");
     }
    
     void Update()
@@ -63,9 +66,10 @@ public class EnemyManager : MonoBehaviour
             hurtTime = 0;
             switchAnimation(animationPond.transform.GetChild(1).GameObject());
         }
-        if (hurtTime >= 0.75)//animation时间
-        {
+        if (hurtTime >= jcTime)//animation时间
             state = States.move;
+        if (hurtTime >= 2)
+        {
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             hurtTime = -1;
         }

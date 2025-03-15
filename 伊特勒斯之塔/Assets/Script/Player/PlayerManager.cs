@@ -109,8 +109,10 @@ public class PlayerManager : MonoBehaviour
             switchAnimation(animationPond.transform.GetChild(2).GameObject());
                               }
         if (hurtTime >= 0.63)//animationÊ±¼ä
-        {
              state = States.idle;
+         
+        if (hurtTime >= 2)
+        {
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             hurtTime = -1;
         }

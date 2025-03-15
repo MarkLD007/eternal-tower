@@ -7,10 +7,10 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Sword : MonoBehaviour
 {
-    public float shangHai;
+    public int shangHai;
     public float aspeed;
-    public float abstractHp;//影响上限血量
-    public float substanceHp;//影响下限血量
+    public int abstractHp;//影响上限血量
+    public int substanceHp;//影响下限血量
     public float inSpeed;//影响速度
    
     void Start()
@@ -36,7 +36,7 @@ public class Sword : MonoBehaviour
             player.GetComponent<PlayerManager>().SubstanceHP += substanceHp; 
         }
     }
-    void InfluencePLayer(float abstracthp, float inspeed)
+    void InfluencePLayer(int abstracthp, float inspeed)
     {
         GameObject player = gameObject.transform.parent.GameObject();
         if (player.name == "Player")
