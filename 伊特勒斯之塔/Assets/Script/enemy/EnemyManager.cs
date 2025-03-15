@@ -73,7 +73,7 @@ public class EnemyManager : MonoBehaviour
       
         if (hurtTime >= 0)
             hurtTime += Time.deltaTime;
-        if (hp < HP&&hp>1)
+        if (hp < HP&&hp>1 && state != States.attack)
         {
             HP = hp;
             state = States.hurt;

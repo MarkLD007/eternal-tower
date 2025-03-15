@@ -57,6 +57,11 @@ public class MenuList : MonoBehaviour
         StartCoroutine(LoadScene(0));
     }
 
+    public void Thanks()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void Exit()
     {
         Application.Quit();

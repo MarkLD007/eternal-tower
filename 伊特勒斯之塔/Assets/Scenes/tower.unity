@@ -2414,6 +2414,7 @@ MonoBehaviour:
   generateTime: -1
   jingdu: 0
   generateNum: 0
+  generateBOSS: 0
 --- !u!1 &1909838229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,7 +2520,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3d0616249cc41ad4a875e3be7704e520, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 05d2a92d07cee804abaaa75b165d327c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.518
   m_Pitch: 1

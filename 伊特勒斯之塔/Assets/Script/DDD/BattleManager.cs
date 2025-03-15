@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class BattleManager : MonoBehaviour
 {
     public GameObject canvas;
@@ -28,7 +29,9 @@ public class BattleManager : MonoBehaviour
         canvas.SetActive(false);
         canvas.SetActive(true);
         if(jingdu==4)
-            SceneManager.LoadScene(0);
+        {
+            SceneManager.LoadScene(3);
+        }
         else
         {
             backScence.GetComponent<SpriteRenderer>().sprite = backPond.transform.GetChild(jingdu).GetComponent<SpriteRenderer>().sprite;
@@ -62,6 +65,7 @@ public class BattleManager : MonoBehaviour
         GameObject enemySY = GameObject.FindWithTag("Enemy");
         if (enemySY == null && generateNum <= 0&&generateBOSS!=3)
         {
+            generateBOSS++;
             jingdu++;
             zhunchang();
             Player.transform.localPosition = new Vector3(0, 0, 0);
