@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     public float speed = 0.01f;
     private float hurtTime = -1;
     private float diedTime = -1;
+    public GameObject HPbar;
     public GameObject weaponPond;
     public GameObject animationPond;
     private int swordXuho = 0;
@@ -55,6 +56,7 @@ public class PlayerManager : MonoBehaviour
         hurt();
         died();
     }
+  
     void switchSword()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -130,6 +132,7 @@ public class PlayerManager : MonoBehaviour
         if (SubstanceHP <= 0)
         {
             SubstanceHP = 1;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             state = States.died;
             switchAnimation(animationPond.transform.GetChild(3).GameObject());
             diedTime = 0;
@@ -137,6 +140,12 @@ public class PlayerManager : MonoBehaviour
         if (diedTime >= 1)
         {
             Destroy(gameObject);
+            GameObject canvas = GameObject.Find("Canvas");
+            if(canvas!=null)
+            {
+                canvas.SetActive(false);
+                canvas.SetActive(true);
+            }
             SceneManager.LoadScene(0);
         }
               }

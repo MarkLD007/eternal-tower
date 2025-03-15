@@ -14,6 +14,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject animationPond;
     public States state = States.move;
     public Boolean monster = true;
+    public HealthBar healthBar;
     private float hurtTime=-1;
     private float jcTime;
     private float diedTime=-1;
@@ -46,6 +47,7 @@ public class EnemyManager : MonoBehaviour
         {
             GameObject player = collision.gameObject;
             player.GetComponent<PlayerManager>().SubstanceHP -= shanghai;
+            healthBar.SetHealthBar(player.GetComponent<PlayerManager>().SubstanceHP);
         }
     }
     void switchAnimation(GameObject stateAnimation)
@@ -73,6 +75,7 @@ public class EnemyManager : MonoBehaviour
         {
             HP = hp;
             state = States.hurt;
+            gameObject.GetComponent<AudioSource>().enabled = true;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             hurtTime = 0;
             switchAnimation(animationPond.transform.GetChild(1).GameObject());
@@ -81,6 +84,7 @@ public class EnemyManager : MonoBehaviour
             state = States.move;
         if (hurtTime >= 2)
         {
+            gameObject.GetComponent<AudioSource>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             hurtTime = -1;
         }
@@ -92,6 +96,7 @@ public class EnemyManager : MonoBehaviour
         if (hp<=0)
         {
             hp = 1;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             state = States.died;
             switchAnimation(animationPond.transform.GetChild(2).GameObject());
             diedTime = 0;

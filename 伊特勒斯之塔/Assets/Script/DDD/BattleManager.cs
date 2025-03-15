@@ -18,7 +18,7 @@ public class BattleManager : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         generateTime = 0;
-        generateNum = UnityEngine.Random.Range(25, 30);
+        generateNum = UnityEngine.Random.Range(15, 20);
     }
 
     void zhunchang()
@@ -47,6 +47,13 @@ public class BattleManager : MonoBehaviour
             }
             generateTime = 0;
         }
+        if (jingdu == 3 && generateNum ==1)
+        {
+            GameObject enemys = GameObject.Instantiate(enemy[4], gameObject.transform);
+            enemys.transform.localPosition = new Vector3(UnityEngine.Random.Range(-475, 475), UnityEngine.Random.Range(-225, 225));
+            generateNum--;
+        }
+
     }
    void success()
     {
@@ -56,7 +63,7 @@ public class BattleManager : MonoBehaviour
             jingdu++;
             zhunchang();
             Player.transform.localPosition = new Vector3(0, 0, 0);
-            generateNum = UnityEngine.Random.Range(25, 30);
+            generateNum = UnityEngine.Random.Range(15, 20);
             generateTime = 0;
         }
             
