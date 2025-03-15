@@ -50,7 +50,7 @@ public class PlayerManager : MonoBehaviour
     }
  void limitPosition()
     {
-        if (math.abs(gameObject.transform.position.x) > 465 && math.abs(gameObject.transform.position.y) > 225)
+        if (math.abs(gameObject.transform.localPosition.x) > 465 || math.abs(gameObject.transform.localPosition.y) > 225)
             gameObject.transform.position = new Vector3(UnityEngine.Random.Range(-465, 465), UnityEngine.Random.Range(-225, 225), 0);
     }
     void Update()

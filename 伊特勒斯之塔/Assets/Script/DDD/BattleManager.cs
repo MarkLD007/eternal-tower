@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class BattleManager : MonoBehaviour
     public float generateTime=-1;
     public int jingdu = 0;
     public int generateNum;
+    public int generateBOSS=0;
 
     void Start()
     {
@@ -47,18 +49,18 @@ public class BattleManager : MonoBehaviour
             }
             generateTime = 0;
         }
-        if (jingdu == 3 && generateNum ==1)
+        if (jingdu == 3 && generateNum <=0&&generateBOSS==3)
         {
+            generateBOSS = 4;
             GameObject enemys = GameObject.Instantiate(enemy[4], gameObject.transform);
             enemys.transform.localPosition = new Vector3(UnityEngine.Random.Range(-475, 475), UnityEngine.Random.Range(-225, 225));
-            generateNum--;
         }
 
     }
    void success()
     {
         GameObject enemySY = GameObject.FindWithTag("Enemy");
-        if (enemySY == null && generateNum <= 0)
+        if (enemySY == null && generateNum <= 0&&generateBOSS!=3)
         {
             jingdu++;
             zhunchang();
