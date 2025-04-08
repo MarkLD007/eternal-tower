@@ -31,12 +31,8 @@ public class Sword : MonoBehaviour
         {
           gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(-aspeed, -aspeed));
         }
-      
-       
-      
            
-
-    }
+                 }
     private void OnTriggerEnter2D(Collider2D collision)
     {
      
