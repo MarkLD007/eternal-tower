@@ -52,7 +52,6 @@ public class Sword : MonoBehaviour
    
     void Update()
     {
-       // limit();
       
     }
   

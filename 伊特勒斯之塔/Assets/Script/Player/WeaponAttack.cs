@@ -7,35 +7,39 @@ using UnityEngine;
 public class WeaponAttack : MonoBehaviour
 {
     public float aspeed=1;
-  public  Boolean attck = true;
+    public  Boolean attck = true;
     GameObject weapon;
     float stime = -1;
    
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy"&&attck)
+        if (collision.gameObject.tag == "Enemy" && attck)
         {
             stime = 0;
             attck = false;
             GameObject enemy = collision.gameObject;
             Vector3 ep = enemy.GetComponent<Transform>().position;
             Vector3 wp = weapon.GetComponent<Transform>().position;
-            Vector3 p = new Vector3(ep.x - wp.x, ep.y - wp.y, ep.z - wp.z);
-            weapon.GetComponent<Rigidbody2D>().AddForce(new Vector2(p.x * 500, p.y * 500));
+            Vector3 p = Vector3.Normalize(new Vector3(ep.x - wp.x, ep.y - wp.y, ep.z - wp.z));
+            weapon.GetComponent<Rigidbody2D>().AddForce(new Vector2(p.x * 20000, p.y * 20000));
             weapon.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
     void Start()
     {
         weapon = gameObject.GetComponent<Transform>().parent.gameObject;
+
     }
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        gameObject.GetComponent<Transform>().localPosition = new Vector3(0, 0, 0);
+    }
     void Update()
     {
         if (stime >= 0)
             stime += Time.deltaTime;
-        if (stime >= 0.5 && stime <= 0.55)
+        if (stime >= 0.25 && stime <= 0.3)
         {
             weapon.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             weapon.GetComponent<BoxCollider2D>().enabled = false;
