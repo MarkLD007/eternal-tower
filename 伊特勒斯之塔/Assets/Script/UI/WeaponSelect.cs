@@ -15,22 +15,44 @@ public class WeaponSeclect : MonoBehaviour
     void Start()
     {
         // GameObject.DontDestroyOnLoad(gameObject);
-        Weapon1.onClick.AddListener(LoadScene);
-        Weapon2.onClick.AddListener(LoadScene);
-        Weapon3.onClick.AddListener(LoadScene);
-        Weapon4.onClick.AddListener(LoadScene);
-        Weapon5.onClick.AddListener(LoadScene);
+        Weapon1.onClick.AddListener(LoadScene1);
+        Weapon2.onClick.AddListener(LoadScene2);
+        Weapon3.onClick.AddListener(LoadScene3);
+        Weapon4.onClick.AddListener(LoadScene4);
+        Weapon5.onClick.AddListener(LoadScene5);
         WeaponAnswer.a = 0;
     }
 
 
-    private void LoadScene()
+    private void LoadScene1()
     {
+        WeaponAnswer.a = 0;
         StartCoroutine(LoadScene(3));
-       
     }
 
+    private void LoadScene2()
+    {
+        WeaponAnswer.a = 1;
+        StartCoroutine(LoadScene(3));
+    }
 
+    private void LoadScene3()
+    {
+        WeaponAnswer.a = 2;
+        StartCoroutine(LoadScene(3));
+    }
+
+    private void LoadScene4()
+    {
+        WeaponAnswer.a = 3;
+        StartCoroutine(LoadScene(3));
+    }
+
+    private void LoadScene5()
+    {
+        WeaponAnswer.a = 4;
+        StartCoroutine(LoadScene(3));
+    }
     IEnumerator LoadScene(int index)
     {
         animator.SetBool("Fadein", true);
