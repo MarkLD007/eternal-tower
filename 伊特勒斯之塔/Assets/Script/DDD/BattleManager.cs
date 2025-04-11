@@ -30,7 +30,7 @@ public class BattleManager : MonoBehaviour
         canvas.SetActive(true);
         if(jingdu==4)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
         else
         {

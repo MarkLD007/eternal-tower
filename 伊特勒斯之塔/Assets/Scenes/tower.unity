@@ -1133,11 +1133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: weaponsPond
       objectReference: {fileID: 0}
-    - target: {fileID: 5198264016807709415, guid: b09fc2e56ddfab0499b589832732df88,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

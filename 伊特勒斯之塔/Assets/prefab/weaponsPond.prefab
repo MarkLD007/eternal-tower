@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951396092b331de4797769040d980b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aspeed: 0.6
+  aspeed: 0.3
   attck: 1
 --- !u!1 &706307490272044004
 GameObject:
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d215cc123cc96f84883873a4eec8a108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shangHai: 40
+  shangHai: 50
   abstractHp: 20
   substanceHp: -5
   inSpeed: 0.2
@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951396092b331de4797769040d980b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aspeed: 0.4
+  aspeed: 0.5
   attck: 1
 --- !u!1 &5198264016807709415
 GameObject:

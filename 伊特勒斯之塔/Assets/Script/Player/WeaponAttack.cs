@@ -39,7 +39,7 @@ public class WeaponAttack : MonoBehaviour
     {
         if (stime >= 0)
             stime += Time.deltaTime;
-        if (stime >= 0.25 && stime <= 0.3)
+        if (stime >= 0.20 && stime <= 0.25)
         {
             weapon.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             weapon.GetComponent<BoxCollider2D>().enabled = false;

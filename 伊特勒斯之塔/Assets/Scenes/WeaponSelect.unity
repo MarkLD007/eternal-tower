@@ -906,7 +906,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u75BE\u98CE\u4E4B\u5203\n\u653B\u901F\u6781\u5FEB\n\u4F24\u5BB3\u8F83\u4F4E"
+  m_Text: "\u5E73\u51E1\u4E4B\u5203\n\u653B\u901F\u4E00\u822C\n\u4F24\u5BB3\u4E00\u822C"
 --- !u!222 &383163611
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2669,7 +2669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7687\u5BB6\u91D1\u5251\n\u653B\u901F\u4E2D\u7B49\n\u4F24\u5BB3\u4E2D\u7B49"
+  m_Text: "\u7687\u5BB6\u91D1\u5251\n\u653B\u901F\u6781\u4F4E\n\u4F24\u5BB3\u8F83\u9AD8"
 --- !u!222 &1462638815
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3213,7 +3213,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9A91\u58EB\u91CD\u5251\n\u653B\u901F\u7F13\u6162\n\u4F24\u5BB3\u5F88\u9AD8"
+  m_Text: "\u9A91\u58EB\u65AD\u5251\n\u653B\u901F\u6781\u5FEB\n\u4F24\u5BB3\u6781\u4F4E"
 --- !u!222 &1770402690
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3744,7 +3744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab099570c37c6c479024e3f077ec346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: 0
 --- !u!4 &2035755549
 Transform:
   m_ObjectHideFlags: 0
