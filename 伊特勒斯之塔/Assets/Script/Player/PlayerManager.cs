@@ -25,20 +25,34 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         DynamicHP = SubstanceHP;
-        equip();
     }
-    public void equip()
+    public void equip(int xuhao=-1)
     {
-        int childLength = weaponPond.transform.childCount;
-        int randomChild = UnityEngine.Random.Range(0, childLength);
-        GameObject weapon= GameObject.Instantiate(weaponPond);
-        GameObject sword = weapon.transform.GetChild(randomChild).GameObject();
-        sword.transform.SetParent(gameObject.transform);
-        sword.GetComponent<DistanceJoint2D>().enabled = true;
-        sword.GetComponent<DistanceJoint2D>().connectedBody = gameObject.GetComponent<Rigidbody2D>();
-        sword.transform.localPosition = new Vector3(0, 0, 0);
-       
-        Destroy(weapon);
+        if (xuhao == -1)
+        {
+            int childLength = weaponPond.transform.childCount;
+            int randomChild = UnityEngine.Random.Range(0, childLength);
+            GameObject weapon = GameObject.Instantiate(weaponPond);
+            GameObject sword = weapon.transform.GetChild(randomChild).GameObject();
+            sword.transform.SetParent(gameObject.transform);
+            sword.GetComponent<DistanceJoint2D>().enabled = true;
+            sword.GetComponent<DistanceJoint2D>().connectedBody = gameObject.GetComponent<Rigidbody2D>();
+            sword.transform.localPosition = new Vector3(0, 0, 0);
+
+            Destroy(weapon);
+        }
+        else
+        {
+            int childLength = weaponPond.transform.childCount;
+            GameObject weapon = GameObject.Instantiate(weaponPond);
+            GameObject sword = weapon.transform.GetChild(xuhao).GameObject();
+            sword.transform.SetParent(gameObject.transform);
+            sword.GetComponent<DistanceJoint2D>().enabled = true;
+            sword.GetComponent<DistanceJoint2D>().connectedBody = gameObject.GetComponent<Rigidbody2D>();
+            sword.transform.localPosition = new Vector3(0, 0, 0);
+
+            Destroy(weapon);
+        }
     }
    void limitHP()
     {

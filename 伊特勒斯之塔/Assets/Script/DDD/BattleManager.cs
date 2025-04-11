@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +20,8 @@ public class BattleManager : MonoBehaviour
         Player = GameObject.Find("Player");
         generateTime = 0;
         generateNum = UnityEngine.Random.Range(10, 15);
+        Player.GetComponent<PlayerManager>().equip(WeaponAnswer.a);
+        WeaponAnswer.a = -1;
     }
 
     void zhunchang()
@@ -35,7 +35,7 @@ public class BattleManager : MonoBehaviour
         else
         {
             backScence.GetComponent<SpriteRenderer>().sprite = backPond.transform.GetChild(jingdu).GetComponent<SpriteRenderer>().sprite;
-            Player.GetComponent<PlayerManager>().equip();
+            Player.GetComponent<PlayerManager>().equip(-1);
         }
     }
  void   generateEnamy()

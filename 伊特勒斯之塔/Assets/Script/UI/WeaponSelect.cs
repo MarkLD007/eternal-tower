@@ -11,8 +11,7 @@ public class WeaponSeclect : MonoBehaviour
     public Button Weapon3;
     public Button Weapon4;
     public Button Weapon5;
-
-    public Animator animator; 
+    public Animator animator;
     void Start()
     {
         // GameObject.DontDestroyOnLoad(gameObject);
@@ -21,12 +20,14 @@ public class WeaponSeclect : MonoBehaviour
         Weapon3.onClick.AddListener(LoadScene);
         Weapon4.onClick.AddListener(LoadScene);
         Weapon5.onClick.AddListener(LoadScene);
+        WeaponAnswer.a = 0;
     }
 
 
     private void LoadScene()
     {
         StartCoroutine(LoadScene(3));
+       
     }
 
 
