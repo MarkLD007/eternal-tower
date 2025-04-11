@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartPlay.unity
+    guid: 488e7345f3c8ac64fb1b834b46ab9432
+  - enabled: 1
+    path: Assets/Scenes/WeaponSelect.unity
+    guid: d87c33307ed9721488a978d5ac1aca48
+  - enabled: 1
+    path: Assets/Scenes/teach.unity
+    guid: ebdda07c0bb38104e856220043c79748
+  - enabled: 1
+    path: Assets/Scenes/tower.unity
+    guid: 08d96da30e5f63647892886f22c19640
+  - enabled: 1
+    path: Assets/Scenes/Thanks.unity
+    guid: f33c930e7660d3045a7a9113ba4a8e2d
   m_configObjects: {}
