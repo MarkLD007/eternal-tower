@@ -49,9 +49,9 @@ public class PlayerManager : MonoBehaviour
             GameObject weapon = GameObject.Instantiate(weaponPond);
             GameObject sword = weapon.transform.GetChild(xuhao).GameObject();
             sword.transform.SetParent(gameObject.transform);
-            sword.GetComponent<DistanceJoint2D>().enabled = true;
-            sword.GetComponent<DistanceJoint2D>().connectedBody = gameObject.GetComponent<Rigidbody2D>();
-            sword.transform.localPosition = new Vector3(0, 0, 0);
+            sword.GetComponent<Joint2D>().enabled = true;
+            sword.GetComponent<Joint2D>().connectedBody = gameObject.GetComponent<Rigidbody2D>();
+            sword.transform.localPosition = new Vector3(0,0.5f,0);
 
             Destroy(weapon);
         }

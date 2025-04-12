@@ -15,6 +15,10 @@ GameObject:
   - component: {fileID: 8008727528366332533}
   - component: {fileID: 1465762711479835134}
   - component: {fileID: 6984865656887850557}
+  - component: {fileID: 2152572007854679284}
+  - component: {fileID: 8673530441318622357}
+  - component: {fileID: 120112168978950820}
+  - component: {fileID: 1291584972000399060}
   m_Layer: 7
   m_Name: BOSS
   m_TagString: Enemy
@@ -294,6 +298,82 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2152572007854679284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2280331527198750541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e6162dd78fad74fac14785e982d542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 7818620292301615166, guid: 2ab2fbc5f027c9447a30a94b3231e27b, type: 3}
+  gaptime: 5
+  shoottime: 0.5
+  times: 5
+  speed: 50
+  shangHai: 40
+  way: {x: 1, y: 0}
+--- !u!114 &8673530441318622357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2280331527198750541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e6162dd78fad74fac14785e982d542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 7818620292301615166, guid: 2ab2fbc5f027c9447a30a94b3231e27b, type: 3}
+  gaptime: 5
+  shoottime: 0.5
+  times: 5
+  speed: 50
+  shangHai: 40
+  way: {x: -1, y: 0}
+--- !u!114 &120112168978950820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2280331527198750541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e6162dd78fad74fac14785e982d542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 7818620292301615166, guid: 2ab2fbc5f027c9447a30a94b3231e27b, type: 3}
+  gaptime: 5
+  shoottime: 0.5
+  times: 5
+  speed: 50
+  shangHai: 40
+  way: {x: 0, y: 1}
+--- !u!114 &1291584972000399060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2280331527198750541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e6162dd78fad74fac14785e982d542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 7818620292301615166, guid: 2ab2fbc5f027c9447a30a94b3231e27b, type: 3}
+  gaptime: 5
+  shoottime: 0.5
+  times: 5
+  speed: 50
+  shangHai: 40
+  way: {x: 0, y: -1}
 --- !u!1 &5186926182895711998
 GameObject:
   m_ObjectHideFlags: 0

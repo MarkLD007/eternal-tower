@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5755628143949954918}
   - component: {fileID: 6096802027687484521}
   - component: {fileID: 3272245634726456539}
+  - component: {fileID: 4774025142829469768}
+  - component: {fileID: 2459579462968939043}
   m_Layer: 7
   m_Name: monster4
   m_TagString: Enemy
@@ -293,3 +295,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4774025142829469768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938189302575152154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e6162dd78fad74fac14785e982d542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 7818620292301615166, guid: 2ab2fbc5f027c9447a30a94b3231e27b, type: 3}
+  gaptime: 4
+  shoottime: 0.4
+  times: 4
+  speed: 40
+  shangHai: 35
+  way: {x: 0, y: 1}
+--- !u!114 &2459579462968939043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938189302575152154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e6162dd78fad74fac14785e982d542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 7818620292301615166, guid: 2ab2fbc5f027c9447a30a94b3231e27b, type: 3}
+  gaptime: 4
+  shoottime: 0.4
+  times: 4
+  speed: 40
+  shangHai: 35
+  way: {x: 0, y: -1}

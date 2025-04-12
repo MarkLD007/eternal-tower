@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
+
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Sword : MonoBehaviour
 {
@@ -16,6 +12,9 @@ public class Sword : MonoBehaviour
    
     void Start()
     {
+        if (gameObject.name == "sword-1")
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(100, 100);
+
         healthBar = GameObject.Find("healthBar").GetComponent<HealthBar>();
     }
 
@@ -37,7 +36,7 @@ public class Sword : MonoBehaviour
         if (player.name == "Player")
         {
             player.GetComponent<PlayerManager>().AbstactHP += abstracthp;
-            player.GetComponent<PlayerManager>().speed+=inspeed;
+            player.GetComponent<Rigidbody2D>().drag +=inspeed;
         }
 
     }
