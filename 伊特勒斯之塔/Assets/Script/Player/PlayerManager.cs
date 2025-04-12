@@ -21,9 +21,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject animationPond;
     private int swordXuho = 0;
     private Vector3 position;
+    private Rigidbody2D rigid;
 
     void Start()
     {
+        rigid = gameObject.GetComponent<Rigidbody2D>();
         DynamicHP = SubstanceHP;
     }
     public void equip(int xuhao=-1)
@@ -99,27 +101,24 @@ public class PlayerManager : MonoBehaviour
             {
                 switchAnimation(animationPond.transform.GetChild(1).GameObject());
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
-                position = gameObject.transform.position;
-                gameObject.transform.position = new Vector3(position.x - speed, position.y, 0);
+
+                rigid.velocity = new Vector2(-speed, rigid.velocity.y);
             }
             if (Input.GetKey(KeyCode.D))
             {
                 switchAnimation(animationPond.transform.GetChild(1).GameObject());
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
-                position = gameObject.transform.position;
-                gameObject.transform.position = new Vector3(position.x + speed, position.y, 0);
+                rigid.velocity = new Vector2(speed, rigid.velocity.y);
             }
             if (Input.GetKey(KeyCode.W))
             {
                 switchAnimation(animationPond.transform.GetChild(1).GameObject());
-                position = gameObject.transform.position;
-                gameObject.transform.position = new Vector3(position.x, position.y + speed, 0);
+                rigid.velocity = new Vector2(rigid.velocity.x,speed);
             }
             if (Input.GetKey(KeyCode.S))
             {
                 switchAnimation(animationPond.transform.GetChild(1).GameObject());
-                position = gameObject.transform.position;
-                gameObject.transform.position = new Vector3(position.x, position.y - speed, 0);
+                rigid.velocity = new Vector2(rigid.velocity.x, -speed);
             }
         }
     }

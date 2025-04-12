@@ -78,7 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: -9182804018266883109, guid: 6387a0a082236744e8dde5d24ee3229d, type: 3}
+  m_Sprite: {fileID: -9182804018266883109, guid: 6387a0a082236744e8dde5d24ee3229d,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,8 +105,9 @@ MonoBehaviour:
   HP: 160
   hp: 160
   shanghai: 10
-  speed: 0.05
-  animationPond: {fileID: 6370456534491856586, guid: 0ae81e64fc8fb10409cbb1e878a91490, type: 3}
+  speed: 20
+  animationPond: {fileID: 6370456534491856586, guid: 0ae81e64fc8fb10409cbb1e878a91490,
+    type: 3}
   state: 1
   monster: 1
   healthBar: {fileID: 0}
@@ -121,7 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b3a092e589c954bb6030cbb4af4585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animations: {fileID: 1413577577582392701, guid: 4f14fd745cda0544d9da7cb2810bbd14, type: 3}
+  animations: {fileID: 1413577577582392701, guid: 4f14fd745cda0544d9da7cb2810bbd14,
+    type: 3}
 --- !u!50 &6779900446501671950
 Rigidbody2D:
   serializedVersion: 4

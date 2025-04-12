@@ -106,7 +106,7 @@ MonoBehaviour:
   HP: 500
   hp: 500
   shanghai: 40
-  speed: 0.08
+  speed: 60
   animationPond: {fileID: 9155657875082508675, guid: 18ccb61cd8503c949b5d0f93e7a6b6b5,
     type: 3}
   state: 1

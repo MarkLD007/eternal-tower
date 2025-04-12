@@ -63,9 +63,9 @@ public class EnemyManager : MonoBehaviour
             switchAnimation(animationPond.transform.GetChild(0).GameObject());
             Vector3 gp = gameObject.transform.position;
             Vector3 tp = target.transform.position;
-            Vector3 cp = new Vector3(gp.x - tp.x, gp.y - tp.y, 0);
+            Vector3 cp = new Vector3(tp.x - gp.x, tp.y - gp.y, 0);
             Vector3 way = Vector3.Normalize(cp);
-            gameObject.transform.position = new Vector3(gp.x - way.x * speed, gp.y - way.y * speed, 0);
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(way.x * speed,way.y * speed);
         }
     }
    void hurt()
