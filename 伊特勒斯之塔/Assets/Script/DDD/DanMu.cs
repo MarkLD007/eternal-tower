@@ -42,10 +42,10 @@ public class DanMu : MonoBehaviour
         if (stimes == 0)
             timer1 = 0;
         GameObject sarrow = GameObject.Instantiate(arrow);
-        if (gameObject.tag == "Player")
-            sarrow.transform.parent = gameObject.transform.GameObject().transform.parent.GameObject().transform.parent;
-        else
+        if (gameObject.tag == "Enemy")
             sarrow.transform.parent = gameObject.transform.GameObject().transform.parent;
+        else
+            sarrow.transform.parent = gameObject.transform.GameObject().transform.parent.GameObject().transform.parent;
         sarrow.GetComponent<ZiDan>().shangHai = shangHai;
         sarrow.transform.position = gameObject.transform.position;
         sarrow.GetComponent<Rigidbody2D>().velocity = new Vector2(way.x * speed, way.y * speed);
