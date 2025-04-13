@@ -42,9 +42,8 @@ public class DanMu : MonoBehaviour
         if (stimes == 0)
             timer1 = 0;
         GameObject sarrow = GameObject.Instantiate(arrow, gameObject.transform.GameObject().transform.parent);
-        sarrow.transform.localScale = new Vector3(0.5f, 0.5f,0);
         sarrow.GetComponent<ZiDan>().shangHai = shangHai;
-        sarrow.transform.localPosition = new Vector2(0, 0);
+        sarrow.transform.position = gameObject.transform.position;
         sarrow.GetComponent<Rigidbody2D>().velocity = new Vector2(way.x * speed, way.y * speed);
         timer2 = 0;
     }
