@@ -644,7 +644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0026245117}
+  m_AnchoredPosition: {x: 0, y: -0.0026855469}
   m_SizeDelta: {x: 0, y: -0.0048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &388482181
@@ -1366,7 +1366,7 @@ GameObject:
   - component: {fileID: 1113294759}
   - component: {fileID: 1113294758}
   - component: {fileID: 1113294757}
-  m_Layer: 6
+  m_Layer: 20
   m_Name: background
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1452,7 +1452,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1497,7 +1497,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1542,7 +1542,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1587,7 +1587,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1605,7 +1605,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -35, y: 0}
   m_SpriteTilingProperty:
@@ -1639,7 +1639,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2533,12 +2533,27 @@ PrefabInstance:
     - target: {fileID: 707386511777588897, guid: 0e2e847d49c3fef42b404238e464b5a2,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707386511777588897, guid: 0e2e847d49c3fef42b404238e464b5a2,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707386511777588897, guid: 0e2e847d49c3fef42b404238e464b5a2,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 748352405970801017, guid: 0e2e847d49c3fef42b404238e464b5a2,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 748352405970801017, guid: 0e2e847d49c3fef42b404238e464b5a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1128628080422493432, guid: 0e2e847d49c3fef42b404238e464b5a2,
         type: 3}

@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
         if (xuhao == -1)
         {
             int childLength = weaponPond.transform.childCount;
-            int randomChild = UnityEngine.Random.Range(0, childLength);
+            int randomChild = UnityEngine.Random.Range(0, childLength-1);
             GameObject weapon = GameObject.Instantiate(weaponPond);
             GameObject sword = weapon.transform.GetChild(randomChild).GameObject();
             sword.transform.SetParent(gameObject.transform);
@@ -72,7 +72,6 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         limitHP();
-        limitPosition();
         switchSword();
         move();
         hurt();

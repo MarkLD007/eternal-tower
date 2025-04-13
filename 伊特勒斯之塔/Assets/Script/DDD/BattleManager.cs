@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,6 +27,12 @@ public class BattleManager : MonoBehaviour
 
     void zhunchang()
     {
+        for(int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            GameObject child = gameObject.transform.GetChild(i).GameObject();
+            if (child.name == "Bullet(Clone)")
+                Destroy(child);
+        }
         canvas.SetActive(false);
         canvas.SetActive(true);
         if (jingdu == 4)
