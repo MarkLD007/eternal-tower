@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shangHai: 50
-  abstractHp: 50
+  abstractHp: 100
   substanceHp: -5
   inSpeed: 0
   healthBar: {fileID: 0}
@@ -416,7 +416,7 @@ MonoBehaviour:
   shoottime: 0.1
   times: 1
   speed: 150
-  shangHai: 25
+  shangHai: 60
   way: {x: 1, y: 0}
 --- !u!114 &7705034412373833829
 MonoBehaviour:
@@ -1706,7 +1706,7 @@ MonoBehaviour:
   shangHai: 30
   abstractHp: 20
   substanceHp: 0
-  inSpeed: 50
+  inSpeed: 40
   healthBar: {fileID: 0}
 --- !u!1 &7572689182594680952
 GameObject:

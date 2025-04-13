@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2948743677534333665}
   - component: {fileID: 7297938588495836714}
   - component: {fileID: 3430153149504026349}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8688575788626425756, guid: 58d0e5bc2dd28434abcaaf94a4dfeec0, type: 3}
+  m_Sprite: {fileID: -8688575788626425756, guid: 58d0e5bc2dd28434abcaaf94a4dfeec0,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -86,7 +87,7 @@ GameObject:
   - component: {fileID: 4709358044091741971}
   - component: {fileID: 3975898042291961244}
   - component: {fileID: 5816519948529698040}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +164,7 @@ GameObject:
   - component: {fileID: 5880020129506302031}
   - component: {fileID: 5984814011517778131}
   - component: {fileID: 8281744381668874320}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: healthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +180,7 @@ RectTransform:
   m_GameObject: {fileID: 6445028287865914673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 2.0189273}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4709358044091741971}
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -275,9 +276,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 500
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 500
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -305,7 +306,7 @@ GameObject:
   - component: {fileID: 2516378788424424194}
   - component: {fileID: 3204341867844492126}
   - component: {fileID: 7933075979638075865}
-  m_Layer: 5
+  m_Layer: 16
   m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

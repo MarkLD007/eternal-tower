@@ -23,7 +23,7 @@ public class BowManager : MonoBehaviour
             weapon.transform.eulerAngles =new Vector3(0,0, math.degrees(math.atan2(p.y, p.x)));
             weapon.GetComponent<Rigidbody2D>().AddForce(new Vector2(-p.x * 1000, -p.y * 1000));
             weapon.GetComponent<DanMu>().enabled = true;
-            weapon.GetComponent<DanMu>().way = new Vector2(p.x,p.y+0.1f);
+            weapon.GetComponent<DanMu>().way = new Vector2(p.x,p.y+0.2f);
             arrowtime = 0;
         }
     }
