@@ -33,5 +33,6 @@ public class Bow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameObject.GetComponent<SpriteRenderer>().flipX = gameObject.transform.parent.GetComponent<SpriteRenderer>().flipX;
     }
 }
