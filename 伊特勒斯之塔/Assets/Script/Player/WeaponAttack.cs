@@ -7,7 +7,9 @@ using UnityEngine;
 public class WeaponAttack : MonoBehaviour
 {
     public float aspeed=1;
+    public int strength = 10000;
     public  Boolean attck = true;
+
     GameObject weapon;
     float stime = -1;
    
@@ -21,7 +23,7 @@ public class WeaponAttack : MonoBehaviour
             Vector3 ep = enemy.GetComponent<Transform>().position;
             Vector3 wp = weapon.GetComponent<Transform>().position;
             Vector3 p = Vector3.Normalize(new Vector3(ep.x - wp.x, ep.y - wp.y, ep.z - wp.z));
-            weapon.GetComponent<Rigidbody2D>().AddForce(new Vector2(p.x * 20000, p.y * 20000));
+            weapon.GetComponent<Rigidbody2D>().AddForce(new Vector2(p.x * strength, p.y * strength));
             weapon.GetComponent<BoxCollider2D>().enabled = true;
         }
     }

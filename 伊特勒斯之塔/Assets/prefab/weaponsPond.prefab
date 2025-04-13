@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspeed: 0.3
+  strength: 30000
   attck: 1
 --- !u!1 &706307490272044004
 GameObject:
@@ -631,6 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspeed: 0.4
+  strength: 20000
   attck: 1
 --- !u!1 &1500938543813976725
 GameObject:
@@ -1049,6 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspeed: 0.8
+  strength: 10000
   attck: 1
 --- !u!1 &2896635026802281523
 GameObject:
@@ -1159,6 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspeed: 0.5
+  strength: 15000
   attck: 1
 --- !u!1 &3112475927824454640
 GameObject:
@@ -1306,6 +1310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspeed: 0.4
+  strength: 20000
   attck: 1
 --- !u!1 &5198264016807709415
 GameObject:
