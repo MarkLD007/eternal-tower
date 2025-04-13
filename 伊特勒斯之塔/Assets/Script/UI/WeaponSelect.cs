@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class WeaponSeclect : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class WeaponSeclect : MonoBehaviour
     public Button Weapon3;
     public Button Weapon4;
     public Button Weapon5;
+    public Button Weapon6;
     public Animator animator;
     void Start()
     {
@@ -20,7 +23,7 @@ public class WeaponSeclect : MonoBehaviour
         Weapon3.onClick.AddListener(LoadScene3);
         Weapon4.onClick.AddListener(LoadScene4);
         Weapon5.onClick.AddListener(LoadScene5);
-        WeaponAnswer.a = 0;
+        Weapon6.onClick.AddListener(LoadScene6);
     }
 
 
@@ -52,6 +55,15 @@ public class WeaponSeclect : MonoBehaviour
     {
         WeaponAnswer.a = 4;
         StartCoroutine(LoadScene(3));
+    }
+
+    private void LoadScene6()
+    {
+        if (UnlockWand.IsWandOpen)
+        {
+            WeaponAnswer.a = 5;
+            StartCoroutine(LoadScene(3));
+        }
     }
     IEnumerator LoadScene(int index)
     {

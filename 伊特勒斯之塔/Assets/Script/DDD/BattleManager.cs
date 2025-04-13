@@ -10,10 +10,10 @@ public class BattleManager : MonoBehaviour
     public GameObject backPond;
     public GameObject[] enemy;
     public GameObject Player;
-    public float generateTime=-1;
+    public float generateTime = -1;
     public int jingdu = 0;
     public int generateNum;
-    public int generateBOSS=0;
+    public int generateBOSS = 0;
 
     void Start()
     {
@@ -28,7 +28,7 @@ public class BattleManager : MonoBehaviour
     {
         canvas.SetActive(false);
         canvas.SetActive(true);
-        if(jingdu==4)
+        if (jingdu == 4)
         {
             SceneManager.LoadScene(4);
         }
@@ -38,11 +38,11 @@ public class BattleManager : MonoBehaviour
             Player.GetComponent<PlayerManager>().equip(-1);
         }
     }
- void   generateEnamy()
+    void generateEnamy()
     {
         if (generateTime >= 0)
             generateTime += Time.deltaTime;
-        if (generateTime >= UnityEngine.Random.Range(10, 15) && generateNum>0)
+        if (generateTime >= UnityEngine.Random.Range(10, 15) && generateNum > 0)
         {
             for (int i = 1; i < UnityEngine.Random.Range(3, 5); i++)
             {
@@ -52,7 +52,7 @@ public class BattleManager : MonoBehaviour
             }
             generateTime = 0;
         }
-        if (jingdu == 3 && generateNum <=0&&generateBOSS==3)
+        if (jingdu == 3 && generateNum <= 0 && generateBOSS == 3)
         {
             generateBOSS = 4;
             GameObject enemys = GameObject.Instantiate(enemy[4], gameObject.transform);
@@ -60,10 +60,10 @@ public class BattleManager : MonoBehaviour
         }
 
     }
-   void success()
+    void success()
     {
         GameObject enemySY = GameObject.FindWithTag("Enemy");
-        if (enemySY == null && generateNum <= 0&&generateBOSS!=3)
+        if (enemySY == null && generateNum <= 0 && generateBOSS != 3)
         {
             generateBOSS++;
             jingdu++;
@@ -72,7 +72,7 @@ public class BattleManager : MonoBehaviour
             generateNum = UnityEngine.Random.Range(10, 15);
             generateTime = 0;
         }
-            
+
     }
     void Update()
     {

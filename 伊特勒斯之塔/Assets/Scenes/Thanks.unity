@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 298793928}
   - component: {fileID: 298793927}
+  - component: {fileID: 298793931}
   - component: {fileID: 298793926}
   - component: {fileID: 298793929}
   - component: {fileID: 298793930}
@@ -329,6 +330,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &298793931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298793925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e163aa72ce0a94a9fce0263b77425c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &400985375
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +686,18 @@ MonoBehaviour:
       - m_Target: {fileID: 298793929}
         m_TargetAssemblyTypeName: MenuList, Assembly-CSharp
         m_MethodName: Thanks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 298793931}
+        m_TargetAssemblyTypeName: UnlockWand, Assembly-CSharp
+        m_MethodName: OpenTheWand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
