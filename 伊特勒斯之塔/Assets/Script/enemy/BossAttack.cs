@@ -1,7 +1,8 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
-public class Attack : MonoBehaviour
+
+public class BossAttack : MonoBehaviour
 {
     public GameObject attackAnimation;
     public int shanghai=60;
@@ -27,7 +28,7 @@ public class Attack : MonoBehaviour
                 player.GetComponent<PlayerManager>().SubstanceHP -= shanghai;
             }
 
-            if (attackTime < 0)
+            if (attackTime < 0&& UnityEngine.Random.Range(0, 100)>50)
             {
                 gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 GameObject boss = gameObject.transform.parent.GameObject();
